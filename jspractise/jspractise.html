@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="zh_CN">
+
+<head>
+
+    <link href="bootstrap-3.3.7-dist/css/bootstrap.css" rel="stylesheet">
+    <script src="jquery-3.2.1.min.js"></script>
+    <script src="bootstrap-3.3.7-dist/js/bootstrap.js"></script>
+    <meta charset="utf8" />
+</head>
+
+<body class="container-fluid bg-info">
+    <div class="container bg-warning">
+        <form>
+            <div class="form-group">
+                <label>日期</label>
+                <input type="text" class="form-control" id="tody" placeholder="当前日期">
+                <button type="button" id="tody_btn" onclick="GetTody()" class="btn-warning">显示当前日期</button>
+            </div>
+            <div class="form-group">
+                <label>字符串反转</label>
+                <input type="text" id="string_inverse" class="form-control" placeholder="请输入字符串">
+                <button type="button" id="string_inverse_btn" onclick="GetInverse()" class="btn-warning">字符串反转</button>
+            </div>
+            <div class="form-group">
+                <label>原数组为[27，35，68，42，15，9，57，18]，将其中大于30的划入子集一[35，68，42，57]，将小于30的划入子集二[27，15，9，18]。</label>
+                <input type="text" id="subarray" class="form-control" placeholder="分割数组">
+                <button type="button" id="subarray_btn" onclick="SubArray()" class="btn-warning">分割数组</button>
+            </div>
+
+        </form>
+    </div>
+
+</body>
+<script>
+    function GetTody() {
+        var tody = document.getElementById("tody");
+        var myData = new Date();
+        var month = myData.getMonth() + 1;
+        tody.setAttribute("value", myData.getFullYear() + "-" + month + "-" + myData.getDate());
+    }
+
+    function GetInverse() {
+        var str = document.getElementById("string_inverse");
+        var stra = str.value;
+        console.log(stra);
+        var strb = String();
+        if (stra == null)
+            alert("不能为空！")
+        else {
+            for (var i = stra.length - 1; i >= 0; i--) {
+                strb = strb + stra[i];
+            }
+            str.value = strb;
+        }
+    }
+
+    function SubArray() {
+        var beforeArray = [27, 35, 68, 42, 15, 9, 57, 18];
+        var ar1 = new Array();
+        var ar2 = new Array();
+        console.log(beforeArray);
+        for (var i = 0; i < beforeArray.length; i++) {
+            if (beforeArray[i] > 30)
+                ar1.push(beforeArray[i])
+            else
+                ar2.push(beforeArray[i])
+        }
+        var sub = document.getElementById("subarray");
+        strs = String();
+        strs = "Array1:" + ar1 + " " + "Array2:" + ar2;
+        sub.value = strs;
+        console.log(strs);
+    }
+</script>
+
+</html>>
