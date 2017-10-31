@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh_CN">
+
+<head>
+    <link href="bootstrap-3.3.7-dist/css/bootstrap.css" rel="stylesheet">
+    <script src="jquery-3.2.1.min.js"></script>
+    <script src="bootstrap-3.3.7-dist/js/bootstrap.js"></script>
+    <meta charset="utf8" />
+</head>
+
+<body class="container-fluid bg-info">
+    <div class="container">
+	<div class = "row ">
+        <form>
+			<div class = "col-md-4">
+			</div>
+				
+			<div class = "col-md-4 bg-warning" style="width:210px;">
+			 <div class="form-group">
+				<input type="email" style="width:180px;" class="form-control"  placeholder="">
+			 </div>
+              <div class="form-group" style="width:200px;">
+                  <button type="button" id="tody_btn" onclick="Getnumber()" class="btn-warning">. 1 .</button>
+				  <button type="button" id="tody_btn" onclick="Getnumber()" class="btn-warning">. 2 .</button>
+				  <button type="button" id="tody_btn" onclick="Getnumber()" class="btn-warning">. 3 .</button>
+				  <button type="button" id="tody_btn" onclick="Getcal()" class="btn-warning">. + .</button>
+              </div>
+              <div class="form-group">
+                  <button type="button" id="string_inverse_btn" onclick="Getnumber()" class="btn-warning">. 4 .</button>
+				  <button type="button" id="tody_btn" onclick="Getnumber()" class="btn-warning">. 5 .</button>
+				  <button type="button" id="tody_btn" onclick="Getnumber()" class="btn-warning">. 6 .</button>
+			  	  <button type="button" id="tody_btn" onclick="Getcal()" class="btn-warning">. - .</button>
+              </div>
+	
+              <div class="form-group">
+                  <button type="button" id="subarray_btn" onclick="Getnumber()" class="btn-warning">. 7 .</button>
+				  <button type="button" id="tody_btn" onclick="Getnumber()" class="btn-warning">. 8 .</button>
+				  <button type="button" id="tody_btn" onclick="Getnumber()" class="btn-warning">. 9 .</button>
+			      <button type="button" id="tody_btn" onclick="Getcal()" class="btn-warning">. * .</button>
+              </div>
+
+			  <div class="form-group">
+                  <button type="button" id="subarray_btn" onclick="clear()" class="btn-warning">AC</button>
+				  <button type="button" id="tody_btn" onclick="Getcal()" class="btn-warning">. / .</button>
+				  <button type="button" id="tody_btn" onclick="Getcal()" class="btn-warning">. = .</button>
+              </div>
+			</div>
+			<div class = "col-md-4">
+			</div>
+        </form>
+	</div>
+    </div>
+
+</body>
+<script>
+    function clear(
+		
+	)
+</script>
+
+</html>

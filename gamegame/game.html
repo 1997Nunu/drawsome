@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <canvas id="myCanvas" width="500" height="500" style="border:1px solid #c3c3c3;" onclick="change()">
+</canvas>
+    <script type="text/javascript">
+        var log = console.log.bind(console);
+
+        var contex = document.getElementById("myCanvas")
+        var ctx = contex.getContext("2d")
+        var img = new Image()
+        img.src = "a.jpg"
+        img.onload = function() {
+            ctx.drawImage(img, 200, 200);
+        }
+        var paddle = {
+            x: 200,
+            y: 200,
+            speed: 10,
+
+        }
+        window.addEventListener("keydown", function(event) {
+            log(event);
+            if (event.key == "d") {
+                ctx.clearRect(0, 0, 500, 500);
+                ctx.drawImage(img, paddle.x = paddle.x + paddle.speed, paddle.y = paddle.y + paddle.speed)
+            }
+
+            if (event.key == "a") {
+                ctx.clearRect(0, 0, 500, 500);
+                ctx.drawImage(img, paddle.x = paddle.x - paddle.speed, paddle.y = paddle.y - paddle.speed)
+            }
+        })
+    </script>
+</body>
+
+</html>

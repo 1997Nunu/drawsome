@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="zh_CN">
+
+<head>
+    <link href="bootstrap-3.3.7-dist/css/bootstrap.css" rel="stylesheet">
+    <script src="jquery-3.2.1.min.js"></script>
+    <script src="bootstrap-3.3.7-dist/js/bootstrap.js"></script>
+    <meta charset="utf8" />
+</head>
+
+<body class="container-fluid bg-info">
+    <div class="container">
+        <div class="row ">
+            <form>
+                <div class="col-md-4">
+                </div>
+
+                <div class="col-md-4 bg-warning" style="width:210px;">
+                    <div class="form-group">
+                        <input id="display" type="email" style="width:180px;" class="form-control" placeholder="">
+                    </div>
+                    <div class="form-group" style="width:200px;">
+                        <button type="button" id="1" value="1" class="btn-warning">. 1 .</button>
+                        <button type="button" id="2" value="2" class="btn-warning">. 2 .</button>
+                        <button type="button" id="3" value="3" class="btn-warning">. 3 .</button>
+                        <button type="button" id="add" value="+" class="btn-warning">. + .</button>
+                    </div>
+                    <div class="form-group">
+                        <button type="button" id="4" value="4" class="btn-warning">. 4 .</button>
+                        <button type="button" id="5" value="5" class="btn-warning">. 5 .</button>
+                        <button type="button" id="6" value="6" class="btn-warning">. 6 .</button>
+                        <button type="button" id="sub" value="-" class="btn-warning">. - .</button>
+                    </div>
+
+                    <div class="form-group">
+                        <button type="button" id="7" value="7" class="btn-warning">. 7 .</button>
+                        <button type="button" id="8" value="8" class="btn-warning">. 8 .</button>
+                        <button type="button" id="9" value="9" class="btn-warning">. 9 .</button>
+                        <button type="button" id="mul" value="*" class="btn-warning">. * .</button>
+                    </div>
+
+                    <div class="form-group">
+                        <button type="button" id="clear" value="clear" class="btn-warning">AC</button>
+                        <button type="button" id="div" value="/" class="btn-warning">. / .</button>
+                        <button type="button" id="dengyu" value="=" class="btn-warning">. = .</button>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                </div>
+            </form>
+        </div>
+    </div>
+
+</body>
+<script>
+    var displayarry = Array();
+    var num = 0;
+    $(document).click(function(e) {
+        var $num = $(e.target).attr("value")
+        if ($num == "=")
+            excel()
+        else
+            displayarry.push($num)
+
+        console.log("arraynum" + displayarry.join(""))
+        display()
+        if ($num == "clear") {
+            clearall()
+            display()
+        }
+
+    })
+
+    function display() {
+        $("#display").attr("value", displayarry.join(""))
+    }
+
+    function excel() {
+        num = eval(displayarry.join(""))
+        clearall()
+        displayarry.push(num)
+        display()
+    }
+
+    function clearall() {
+        displayarry.length = 0;
+    }
+</script>
+
+</html>
